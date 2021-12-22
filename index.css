@@ -1,0 +1,109 @@
+html, body {
+    margin: 10;
+    padding: 10;
+    font-family: 'Space Mono', monospace;
+}
+
+.container {
+    box-sizing: border-box;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    border: 3px solid #4947ba;
+}
+
+.container::after {
+    box-sizing: border-box;
+    position: absolute;
+    background-color: #2bcdc2;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: -999;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    border: solid 2px #2C2891;
+}
+
+.square {
+    width: 20px;
+    height: 20px;
+    background-color: #39A388;
+}
+
+.snake {
+    background-color: #2C2891;
+    border-radius: none;
+}
+
+.apple {
+    background-color: #39A388;
+    position: relative;
+}
+
+
+.apple::after {
+    position: absolute;
+    content: "";
+    background-color: #F55C47;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.enemy {
+    background-color: #FFC85C;
+}
+
+.score-log {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.score-log h2 {
+    margin-top: 0;
+}
+
+.last-score,
+.high-score {
+    display: block;
+}
+
+#start {
+    margin: 2rem 0;
+    padding: 0.8em 1.6em;
+    font-size: 21px;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+#start:hover {
+    background-color: #2C2891;
+    color: #e9e9ed;
+}
+
+.currentGame {
+    display: flex;
+    justify-content: space-around;
+}
+
+.life + .life  {
+    margin-left: -10px;
+}
+
+.death {
+    filter: brightness(0);
+}
